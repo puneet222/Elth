@@ -3,7 +3,7 @@ import TextField from 'material-ui/TextField';
 import elthLogo from './images/logo.png' ;
 import RaisedButton from 'material-ui/RaisedButton';
 
-class Login extends Component {
+class Home extends Component {
 
   constructor(props) {
     super(props);
@@ -13,13 +13,10 @@ class Login extends Component {
   }
 
   styles = {
-    login : {
+    homePage : {
       position: "relative",
 	    top: "50%",
 	    transform: 	"translateY(-50%)"
-    },
-    button : {
-      margin : 12
     },
     image : {
       height : "30%",
@@ -29,24 +26,24 @@ class Login extends Component {
       color : "#0096ff" ,
       fontSize : "0.9em" ,
       textAlign : "center"
+    },
+    home : {
+      color : "black" ,
+      fontSize : "1.9em" ,
+      textAlign : "center"
     }
-  }
-
-  handleClick = () => {
-    this.props.loginHandler() ;
   }
 
   render() {
 
     return (
-      <div className="login" style={this.styles.login}>
+      <div className="home" style={this.styles.homePage}>
       <img src={elthLogo} style={this.styles.image} />
       <h2 style={this.styles.text}>elth.ai</h2>
-      <TextField  hintText="Mobile Number" />
-      <RaisedButton label="Get OTP" secondary={true} style={this.styles.button} buttonStyle={{"backgroundColor" : "#0096ff"}} onClick={this.handleClick}/>
+      <h2 style={this.styles.home}>This is the Home Page</h2>
       </div>
     );
   }
 }
 
-export default Login;
+export default Home;

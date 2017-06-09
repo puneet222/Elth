@@ -3,7 +3,7 @@ import TextField from 'material-ui/TextField';
 import elthLogo from './images/logo.png' ;
 import RaisedButton from 'material-ui/RaisedButton';
 
-class Login extends Component {
+class Otp extends Component {
 
   constructor(props) {
     super(props);
@@ -13,7 +13,7 @@ class Login extends Component {
   }
 
   styles = {
-    login : {
+    otp : {
       position: "relative",
 	    top: "50%",
 	    transform: 	"translateY(-50%)"
@@ -33,20 +33,27 @@ class Login extends Component {
   }
 
   handleClick = () => {
-    this.props.loginHandler() ;
+    var otp = this.refs.otp.input.value ;
+    console.log(otp) ;
+    if(this.props.otp == otp){
+      this.props.otpHandler() ;
+    }
+    else{
+      console.log("wrong") ;
+    }
   }
 
   render() {
 
     return (
-      <div className="login" style={this.styles.login}>
+      <div className="otp" style={this.styles.otp}>
       <img src={elthLogo} style={this.styles.image} />
       <h2 style={this.styles.text}>elth.ai</h2>
-      <TextField  hintText="Mobile Number" />
-      <RaisedButton label="Get OTP" secondary={true} style={this.styles.button} buttonStyle={{"backgroundColor" : "#0096ff"}} onClick={this.handleClick}/>
+      <TextField ref="otp"  hintText="Enter OTP" type={"number"} />
+      <RaisedButton label="Login" secondary={true} style={this.styles.button} buttonStyle={{"backgroundColor" : "#0096ff"}} onClick={this.handleClick}/>
       </div>
     );
   }
 }
 
-export default Login;
+export default Otp;
