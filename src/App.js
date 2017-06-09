@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import Login from './Login' ;
 import Otp from './Otp' ;
 import Home from './Home' ;
@@ -12,9 +11,9 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      loginState : false,
+      loginState : true,
       otpState : false,
-      homeState : true,
+      homeState : false,
       otp : 9999
     };
     this.loginHandler = this.loginHandler.bind(this) ;
@@ -35,12 +34,10 @@ class App extends Component {
   }
 
   otpHandler = () => {
-    alert("call app opt") ;
     this.setState({
       loginState : false,
       otpState : false,
-      homeState : true,
-      otp : 9999
+      homeState : true
     })
   }
 
@@ -53,7 +50,7 @@ class App extends Component {
     return (
       <div className="App">
         <MuiThemeProvider>
-        <Sidebar content={items} width={250} background={"#ECEFF1"} color={"#212121"} toggleIconSize={20}>
+        <Sidebar content={items} width={210} background={"#FAFAFA"} color={"#212121"} toggleIconSize={20} toggleIconColor={"#212121"}>
         {
           this.state.loginState
             ? <Login loginHandler = {this.loginHandler} />

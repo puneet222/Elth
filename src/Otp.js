@@ -8,7 +8,7 @@ class Otp extends Component {
   constructor(props) {
     super(props);
     this.state = {
-
+      errorText : ''
     };
   }
 
@@ -40,6 +40,9 @@ class Otp extends Component {
     }
     else{
       console.log("wrong") ;
+      this.setState({
+        errorText : "OTP does not match"
+      })
     }
   }
 
@@ -47,9 +50,9 @@ class Otp extends Component {
 
     return (
       <div className="otp" style={this.styles.otp}>
-      <img src={elthLogo} style={this.styles.image} />
+      <img src={elthLogo} style={this.styles.image} alt={"logo image"} />
       <h2 style={this.styles.text}>elth.ai</h2>
-      <TextField ref="otp"  hintText="Enter OTP" type={"number"} />
+      <TextField ref="otp"  hintText="Enter OTP" type={"number"} errorText={this.state.errorText} />
       <RaisedButton label="Login" secondary={true} style={this.styles.button} buttonStyle={{"backgroundColor" : "#0096ff"}} onClick={this.handleClick}/>
       </div>
     );
