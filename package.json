@@ -3,10 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "body-parser": "^1.17.2",
     "material-ui": "^0.18.3",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
-    "react-responsive-sidebar": "^0.1.16"
+    "react-responsive-sidebar": "^0.1.16",
+    "web-push": "^3.2.2"
   },
   "devDependencies": {
     "react-scripts": "1.0.7"
