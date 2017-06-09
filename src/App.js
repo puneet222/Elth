@@ -1,18 +1,21 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
+import Login from './Login' ;
+import { Sidebar, SidebarItem } from 'react-responsive-sidebar';
 import './App.css';
 
 class App extends Component {
   render() {
+    var items = [
+    <SidebarItem>Dashboard</SidebarItem>,
+    <SidebarItem>Profile</SidebarItem>,
+    <SidebarItem>Settings</SidebarItem>,
+  ];
     return (
       <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <Sidebar content={items} width={250} background={"#ECEFF1"} color={"#212121"} toggleIconSize={20}>
+          <Login />
+        </Sidebar>
       </div>
     );
   }
