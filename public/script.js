@@ -3,7 +3,6 @@ if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('sw.js')
   .then(function(swReg) {
     console.log('Service Worker is registered', swReg);
-
     swRegistration = swReg;
     initialiseUI();
   }).catch(function(err) {

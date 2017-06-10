@@ -42,10 +42,22 @@ class App extends Component {
   }
 
   render() {
+
+    var styles = {
+      sidebarItems : {
+        fontWeight : 100,
+        fontSize : "1em",
+        margin : "0px"
+      }
+    }
+
     var items = [
-    <SidebarItem>Dashboard</SidebarItem>,
-    <SidebarItem>Profile</SidebarItem>,
-    <SidebarItem>Settings</SidebarItem>,
+    <SidebarItem><h1 style={styles.sidebarItems}>Dashboard</h1></SidebarItem>,
+    <SidebarItem><h1 style={styles.sidebarItems}>Health</h1></SidebarItem>,
+    <SidebarItem><h1 style={styles.sidebarItems}>Notifications</h1></SidebarItem>,
+    <SidebarItem><h1 style={styles.sidebarItems}>Profile</h1></SidebarItem>,
+    <SidebarItem><h1 style={styles.sidebarItems}>About</h1></SidebarItem>,
+    <SidebarItem><h1 style={styles.sidebarItems}>Settings</h1></SidebarItem>,
   ];
     return (
       <div className="App">

@@ -50,7 +50,7 @@ class Otp extends Component {
 
     return (
       <div className="otp" style={this.styles.otp}>
-      <img src={elthLogo} style={this.styles.image} alt={"logo image"} />
+      <img src={elthLogo} style={this.styles.image} alt={"logo"} />
       <h2 style={this.styles.text}>elth.ai</h2>
       <TextField ref="otp"  hintText="Enter OTP" type={"number"} errorText={this.state.errorText} />
       <RaisedButton label="Login" secondary={true} style={this.styles.button} buttonStyle={{"backgroundColor" : "#0096ff"}} onClick={this.handleClick}/>

@@ -38,7 +38,7 @@ class Home extends Component {
 
     return (
       <div className="home" style={this.styles.homePage}>
-      <img src={elthLogo} style={this.styles.image} />
+      <img src={elthLogo} style={this.styles.image} alt={"logo"}/>
       <h2 style={this.styles.text}>elth.ai</h2>
       <h2 style={this.styles.home}>This is the Home Page</h2>
       </div>
